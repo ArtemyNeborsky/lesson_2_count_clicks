@@ -31,7 +31,7 @@ def is_shorten_link(ready_url):
     payload = {"access_token": token, "key": key, "v": "5.199"}
     response = requests.get(url + method_name, params=payload)
     response.raise_for_status()
-    return True if "response" in response.json() else False
+    return "response" in response.json()
 
 
 if __name__ == "__main__":
